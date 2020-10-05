@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About | DelightIndia{% endblock %}
+{% block content %}
+<section class="services">
+	<div class="container">
+		<div class="section-title">
+			<h1>About us</h1>
+		</div>
+	</div>
+</section>
+<section class="about">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-4 align-item-stretch">
+				<img class="img-fluid" src="{% static 'md/mdn/img/menu-item-4.jpg' %}" alt="about"/>
+			</div>
+			<div class="col-lg-8 d-flex flex-column justify-content-center align-item-stretch" style="padding-bottom: 70px">
+				<div class="content">
+
+					<p>The delightindia is the brand name for MD Bakery.MD bakery journey started in 2004 by two brothers as a strategy to introduce quality bakery products exclusively at their home town. The immense popularity earned in the early period of its introduction laid foundation for what was to be truly remarkable story of success.</p>
+					<ul>
+						<li class="bx bx-check-double font-italic">
+							Delight main moto is to provide fresh bakery products to the end customers.
+						</li>
+						<li class="bx bx-check-double font-italic">
+							By introducing Franchises in the bakery field, Delight want to help those who are struggling with manpower and work ambiguity.
+						</li>
+						<li class="bx bx-check-double font-italic">
+							we introduced newer strategies such as shopwala which is going to make profitable for small shops
+						</li>
+					</ul> 
+					<p>we are using the best production techniques and machinery to further strengthen the quality of the products and increase in production.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</section>
+{% endblock %}

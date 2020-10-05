@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  <title>{% block title %}{% endblock %}</title>
+  
+  <!--  MD Favicons -->
+  <link rel="icon" href="{% static 'md/mdn/img/favicon.png' %}">
+  <!-- Fonts by Google -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+  <!--MD CSS Files -->
+    <link href="{% static 'md/mdn/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'md/mdn/icofont/icofont.min.css' %}" rel="stylesheet">
+    <link href="{% static 'md/mdn/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'md/mdn/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'md/mdn/venobox/venobox.css' %}" rel="stylesheet">
+    <link href="{% static 'md/mdn/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="{% static 'md/mdn/css/style.css' %}" rel="stylesheet">
+  
+</head>
+
+<body>
+  <!-- ======= Top Bar ======= -->
+   <section id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+    <div class="container text-right">
+      <i class="icofont-phone"></i> +91 9701510604
+      <i class="icofont-email"></i> info@delightindia.in
+    </div>
+  </section>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+
+    <div class="container d-flex align-items-center">
+
+      <div class="logo mr-auto">
+         <a href="{% url 'home' %}"><img src="{% static 'md/mdn/img/logo.png' %}" alt="delightlogo" class="img-fluid"></a>
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'products' %}">Products</a></li>
+          <li><a href="{% url 'franchise' %}">Services</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  
+  {% block content %}
+  {% endblock%}
+
+
+    <!-- ======= Footer ======= -->
+   
+    <footer id="footer">
+
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-lg-3 col-md-6 footer-contact">
+              <h3>Delight</h3>
+              <p>
+                #235,236 MSME Kotipi <br>
+                Hindupur, Anantapur<br>
+                Andhra Pradesh-515201 <br><br>
+                <strong>Phone:</strong> +91 9701510604<br>
+                <strong>Email:</strong> info@delightindia.com<br>
+              </p>
+            </div>
+
+            <div class="col-lg-2 col-md-6 footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}">Home</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' %}">About us</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="{% url 'products' %}">Products</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Our Services</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="{% url 'franchise' %}">Franchise</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="{% url 'franchise' %}">Party Orders</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="{% url 'franchise' %}">B2B</a></li>
+              </ul>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+              <h4>Follow Us</h4>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+       
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="container d-md-flex py-4">
+
+        <div class="mr-md-auto text-center text-md-left">
+          <div class="copyright">
+            &copy; Copyright <strong><span>Delight</span></strong>. All Rights Reserved
+          </div>
+        </div>
+      </div>
+     </footer>
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- MD JS Files -->
+  <script src="{% static 'md/mdn/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'md/mdn/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'md/mdn/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'md/mdn/jquery-sticky/jquery.sticky.js' %}"></script>
+  <script src="{% static 'md/mdn/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'md/mdn/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'md/mdn/owl.carousel/owl.carousel.min.js' %}"></script>
+  {% block javascript %}
+  {% endblock %}
+  <!-- Template Main JS File -->
+  <script src="{% static 'md/mdn/js/main.js' %}"></script>
+  </body>
+</html> 
+
+

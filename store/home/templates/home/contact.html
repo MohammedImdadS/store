@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block title %}Contact | DelightIndia{% endblock %}
+{% block javascript %}
+<script src='https://www.google.com/recaptcha/api.js' async defer></script>
+{% endblock %}
+
+{% block content %}
+	<!-- ======= Contact Section ======= -->
+	<section class="contact">
+	  <div class="container">
+	    <div class="section-title">
+	      <h1>Contact us</h1>
+	      <p>Contact us for any queries related to the services we provide</p>
+	    </div>
+	  </div>
+
+	  <div class="map">
+	    <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d242.22294635890063!2d77.5114757!3d13.7446365!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb1bd61c4e25403%3A0x492e1b7b8f8c4a05!2sMd%20food%20produts!5e0!3m2!1sen!2sin!4v1600500749558!5m2!1sen!2sin" frameborder="0" allowfullscreen></iframe>
+	  </div>
+
+	  <div class="container mt-5">
+
+	    <div class="info-wrap">
+	      <div class="row">
+	        <div class="col-lg-3 col-md-6 info">
+	          <i class="icofont-google-map"></i>
+	          <h4>Location:</h4>
+	          <p>#235,236 MSME Kotipi<br>Hindupur, Anantapur<br>Andhra Pradesh-515201</p>
+	        </div>
+
+	        <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+	          <i class="icofont-clock-time icofont-rotate-90"></i>
+	          <h4>Open Hours:</h4>
+	          <p>Monday-Saturday:<br>9:00 AM - 6:00 PM</p>
+	        </div>
+
+	        <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+	          <i class="icofont-envelope"></i>
+	          <h4>Email:</h4>
+	          <p>info@delightindia.com</p>
+	        </div>
+
+	        <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+	          <i class="icofont-phone"></i>
+	          <h4>Call:</h4>
+	          <p>+91 9701510604<br>+91 9121610493</p>
+	        </div>
+	      </div>
+	    </div>
+
+	    <form action="{% url 'contact' %}" method="POST" role="form" class="email-form">
+	    	{% csrf_token %}
+          <div class="form-row">
+            <div class="col-md-6 form-group">
+            	{{form.Full_Name}} 
+            </div>
+            <div class="col-md-6 form-group">
+            	{{form.Phone_Number}}
+            </div>
+          </div>
+          <div class="form-row">
+          <div class="col-lg-6 form-group">
+          	   {{form.Subject}}
+          </div>
+          <div class="col-lg-6 form-group" >
+          	   {{form.Email_Address}}
+          </div>
+          </div>
+          <div >
+          	{{form.Message}}
+     
+          </div>
+          <div class="form-row">
+            <div class="mb-3">
+          	 <div class="g-recaptcha" data-sitekey="6LebT8kZAAAAANLxXbXqzVo2VojXI01SjLDncAeL"></div>
+            </div>
+           <div class="col-md-6">
+          	{% for message in messages %}
+            <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+            	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            		<span aria-hidden="true">&times;</span>
+            	</button>
+          			{{ message }}
+        	</div>
+      		{% endfor %}
+           </div>
+         </div>
+         <div class="text-center"><button type="submit">Send Message</button></div>
+        </form>
+
+      </div>
+    </section><!-- End Contact Section -->
+{% endblock %}

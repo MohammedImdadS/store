@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home | DelightIndia{% endblock %}
+{% block content %}
+
+<!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+         {% for item in carousel %}
+          <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+            <img class="img-fluid" src="{{MEDIA_URL}}{{item.image}}" alt="{{item.name}}"/ >
+            <!-- <div class="carousel-container">
+             
+            </div> -->
+          </div>
+          {% endfor %}
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon icofont-simple-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon icofont-simple-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+ <!-- About -->
+  <section class="about">
+    <div class="container">
+      <div class="row align-items-lg-center">
+        <div class="col-12 col-md-6 text-center text-md-left"data-aos="fade-right">
+          <div class="section-heading mb-3">
+          
+            <h1>Our Story</h1>
+          </div>
+          <p>
+            The delightindia is the brand name for MD Bakery.
+            MD Bakery journey started in 2004 by two brothers as a strategy to introduce quality bakery products exclusively at their home town. The immense popularity earned in the early period of its introduction laid foundation for what was to be truly remarkable story of success. 
+          </p>
+          <a class="btn mt-4 mb-5 mb-md-0" href="#">Read more</a>
+        </div>
+        <div class="col-12 col-md-6" data-aos="fade-left">
+          <img class="img-fluid" src="{% static 'md/mdn/img/menu-item-4.jpg' %}" alt="" />
+        </div>
+      </div>
+      </div>
+  </section>
+    <!-- menu -->
+  <section id="menu" class="menu">
+    <div class="container-fluid p-2">
+      <div class="section-title my-2">
+        <h1>Our Products</h1>
+      </div>
+        <!-- Row 1 -->
+      <div class="row no-gutters">
+        <!-- Colum set #1 -->
+        {% for item in category %}
+          {% if forloop.counter == 1 %}
+        <div class="col-12 col-sm-6 col-xl-2 order-sm-1 order-xl-1">
+         <img class="img-fluid" src="{{MEDIA_URL}}{{item.image}}" alt="">
+        </div>
+        <div class="col-12 col-sm-6 col-xl-2 order-sm-2 order-xl-2 point-left">
+          <div class="dismenu-item-desc">
+              
+           <h1>{{item.name}}</h1>
+           <p>This cake is amazing! I recommend it to everyone.</p>
+           <a href="{% url 'product_list' item.slug %}" class="btn mt-3 d-inline">View More</a>
+          </div>
+        </div>
+        {% endif %}
+      <!-- Colum set #2 -->
+      {% if forloop.counter == 2 %}
+      <div class="col-12 col-sm-6 col-xl-2 order-sm-4 order-xl-3">
+        <img class="img-fluid" src="{{MEDIA_URL}}{{item.image}}" alt="">
+      </div>
+      <div class="col-12 col-sm-6 col-xl-2 order-sm-3 order-xl-4 point-left">
+        <div class="dismenu-item-desc">
+              
+          <h1>{{item.name}}</h1>
+          <p>This cake is amazing! I recommend it to everyone.</p>
+          <a href="{% url 'product_list' item.slug %}" class="btn mt-3 d-inline">View More</a>
+        </div>
+      </div>
+      {% endif %}
+          <!-- Colum set #3 -->
+      {% if forloop.counter == 3 %}
+      <div class="col-12 col-sm-6 col-xl-2 order-sm-5 order-xl-5">
+        <img class="img-fluid" src="{{MEDIA_URL}}{{item.image}}" alt="">
+      </div>
+      <div class="col-12 col-sm-6 col-xl-2 order-sm-6 order-xl-6 point-left">
+        <div class="dismenu-item-desc">
+              
+         <h1>{{item.name}}</h1>
+         <p>This cake is amazing! I recommend it to everyone.</p>
+         <a href="{% url 'product_list' item.slug %}" class="btn mt-3 d-inline">View More</a>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+      <!-- Row 2 -->
+      {% for item in category %}
+      {% if forloop.counter == 4 %}
+      <div class="row no-gutters">
+        <!-- Colum set #4 -->
+        <div class="col-12 col-sm-6 col-xl-2 order-sm-2 order-xl-2">
+          <img class="img-fluid" src="{{MEDIA_URL}}{{item.image}}" alt="">
+        </div>
+        <div class="col-12 col-sm-6 col-xl-2 order-sm-1 order-xl-1 point-right">
+          <div class="dismenu-item-desc">
+                
+           <h1>{{item.name}}</h1>
+           <p>This cake is amazing! I recommend it to everyone.</p>
+           <a href="{% url 'product_list' item.slug %}" class="btn mt-3 d-inline">View More</a>
+          </div>
+        </div>
+        {% endif %}
+      <!-- Colum set #5 -->
+      {% if forloop.counter == 5 %}
+        <div class="col-12 col-sm-6 col-xl-2 order-sm-3 order-xl-4">
+          <img class="img-fluid" src="{{MEDIA_URL}}{{item.image}}" alt="">
+        </div>
+        <div class="col-12 col-sm-6 col-xl-2 order-sm-5 order-xl-3 point-right">
+         <div class="dismenu-item-desc">
+                
+          <h1>{{item.name}}</h1>
+          <p>This cake is amazing! I recommend it to everyone.</p>
+          <a href="{% url 'product_list' item.slug %}" class="btn mt-3 d-inline justify-content-center">View More</a>
+         </div>
+      </div>
+      {% endif %}
+            <!-- Colum set #6 -->
+      {% if forloop.counter == 6 %}
+    <div class="col-12 col-sm-6 col-xl-2 order-sm-6 order-xl-6">
+     <img class="img-fluid" src="{{MEDIA_URL}}{{item.image}}" alt="">
+    </div>
+    <div class="col-12 col-sm-6 col-xl-2 order-sm-5 order-xl-5 point-right">
+      <div class="dismenu-item-desc">
+                
+       <h1>{{item.name}}</h1>
+       <p>This cake is amazing! I recommend it to everyone.</p>
+       <a href="{% url 'product_list' item.slug %}" class="btn mt-3 d-inline ">View More</a>
+      </div>
+    </div>
+    {% endif%}
+    {% endfor %}
+    </div>
+  </div>
+ </div>
+</section>
+
+<!-- ======= Whu Us Section ======= -->
+<section id="why-us" class="why-us">
+  <div class="container">
+
+    <div class="section-title">
+      <h1><span>Our Services</span></h1>
+      <p></p>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-4">
+        <a href="{% url 'franchise' %}"><div class="box">
+          <span>01</span>
+          <h4>Franchise</h4>
+          <p>We provide bakery franchise gives you more profitable</p>
+        </div></a>
+      </div>
+
+      <div class="col-lg-4 mt-4 mt-lg-0">
+        <a href="{% url 'franchise' %}"><div class="box">
+          <span>02</span>
+          <h4>Party Orders</h4>
+          <p>We take party orders
+            on most of our products  </p>
+        </div></a>
+      </div>
+
+      <div class="col-lg-4 mt-4 mt-lg-0">
+        <a href="{% url 'franchise' %}"><div class="box">
+          <span>03</span>
+          <h4>Shopwala </h4>
+          <p>We Provide our 
+           wide range of products for small Consumer </p>
+        </div></a>
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Whu Us Section -->
+ {% endblock content %}

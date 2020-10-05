@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Products | DelightIndia{% endblock %}
+{% block content %}
+<section class="disitem">
+  <div class="container">
+    <div class="container">
+      <div class="section-title">
+        <h1>Our Products</h1>
+        <p>Your Choices</p>
+      </div>
+    </div>
+    <div class="row">
+      {% for item in category %}
+      <div class="col-6 col-sm-4 col-lg-3  d-flex align-items-stretch">
+        <div class="disitem-item">
+          <a href="{% url 'product_list' item.slug %}"><img src="{{MEDIA_URL}}{{item.image}}" class="img-fluid rounded" alt="..."></a>
+          <div class="disitem-content">
+            <h3><a href="{% url 'product_list' item.slug %}">{{item.name}}</a></h3>
+            <p>View our {{item.name}} inside</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+    
+{% endblock content %}
+
+
+
