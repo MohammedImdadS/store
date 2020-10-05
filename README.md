@@ -1,2 +1,2 @@
 # store
-A Simple Bakery website Presence
+A Simple Bakery Presence
